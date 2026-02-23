@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/src/context/ThemeContext";
 import Sidebar from "./component/layout/sidebar";
 import Header from "./component/layout/header";
 import Footer from "./component/layout/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const geistPoppins = Poppins({
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -28,13 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistPoppins.variable} antialiased`}>
         <ThemeProvider>
-          <main className="min-h-screen">
-            <Header />
+          <main >
+            
             <Sidebar />
+            <Header />
             {children}
             <Footer />
           </main>

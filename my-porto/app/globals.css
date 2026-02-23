@@ -11,8 +11,8 @@
   
   --color-navy: #003b73;
   --color-baby: #bfd7ed;
-  --color-grotto: #60a3d9;
-  --color-royal: #0074b7;
+  --color-grotto: #b7cfdc;
+  --color-darkblue: #050a30;
   
 
   --font-poppins: var(--font-poppins);
@@ -29,4 +29,18 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins), Arial, sans-serif;
+}
+
+
+.input-group-admin {
+  @apply mb-0;
+}
+
+.input-group-admin label {
+  @apply block text-xs mb-2 font-medium;
+}
+
+.input-group-admin input, .input-group-admin select,
+.input-group-admin textarea {
+  @apply py-2 px-2 w-70 border-b text-sm;
 }
